@@ -4424,3 +4424,37 @@ section {
         text-align: center;
     }
 }
+
+.project-card-port {
+    position: relative;
+}
+
+.project-card-port::after {
+    content: '● LIVE';
+    position: absolute;
+    top: 15px; right: 15px;
+    background: rgba(16,185,129,0.9);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+    animation: livePulse 2s ease infinite;
+}
+
+@keyframes livePulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(16,185,129,0.5);
+    }
+    50% {
+        box-shadow: 0 0 0 8px rgba(16,185,129,0);
+    }
+}
+
+/* Don't show on coming-soon card */
+.coming-soon-card::after {
+    display: none;
+}
