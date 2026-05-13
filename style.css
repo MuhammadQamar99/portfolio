@@ -4458,3 +4458,45 @@ section {
 .coming-soon-card::after {
     display: none;
 }
+
+
+/* ========== PRICING CARDS — HEIGHT FIX FOR LONG LISTS ========== */
+.pricing-card-port {
+    display: flex;
+    flex-direction: column;
+}
+
+.pricing-features {
+    flex-grow: 1;
+    max-height: 420px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+/* Custom scrollbar inside features list */
+.pricing-features::-webkit-scrollbar {
+    width: 4px;
+}
+
+.pricing-features::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.03);
+    border-radius: 10px;
+}
+
+.pricing-features::-webkit-scrollbar-thumb {
+    background: var(--indigo);
+    border-radius: 10px;
+}
+
+.pricing-features::-webkit-scrollbar-thumb:hover {
+    background: var(--purple);
+}
+
+/* Fade indicator at bottom of scroll */
+.pricing-card-port {
+    position: relative;
+}
+
+.pricing-card-port::after {
+    display: none !important;
+}
